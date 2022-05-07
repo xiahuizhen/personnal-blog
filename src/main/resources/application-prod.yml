@@ -1,0 +1,44 @@
+spring:
+  datasource:
+    hikari:
+      auto-commit: true
+      minimum-idle: 10
+      maximum-pool-size: 60
+      idle-timeout: 30000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: select 1
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/blog?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+    username: root
+    password: root
+  #  redis:
+  #    host: 10.215.137.135
+  #    port: 6379
+  #    password:
+  #    database: 0
+  #    ssl: false
+  #  rabbitmq:
+  #    host: moaapi.ecidi.com
+  #    port: 5672
+  #    username: sms
+  #    password: smstest
+  #    virtual-host: /
+  #    template:
+  #      retry:
+  #        enabled: true
+  #        initial-interval: 1000
+  #        max-attempts: 3
+  #        max-interval: 10000
+  #        multiplier: 1
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 500MB
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.ecidi.cim.megagame.mega.details

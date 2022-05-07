@@ -1,0 +1,7 @@
+server:
+  port: 8070
+spring:
+  profiles:
+    active: dev
+  application:
+    name: 我的博客

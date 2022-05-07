@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zdaxj.blog.dao.BlogMapper">
+
+    <resultMap id="BaseResultMap" type="com.zdaxj.blog.domain.Blog">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="writer" column="writer" jdbcType="VARCHAR"/>
+            <result property="textId" column="text_id" jdbcType="INTEGER"/>
+            <result property="readTimes" column="read_times" jdbcType="INTEGER"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="lastModifyTime" column="last_modify_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,writer,text_id,
+        read_times,create_time,last_modify_time
+    </sql>
+</mapper>
